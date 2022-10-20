@@ -31,3 +31,7 @@ Within MySQL, foreach summoner you wish to monitor:
 
 ## Other Information
 - Images that are created are saved in the html_to_images directory
+
+If all is working, then the bot should automatically post an image that looks like this:
+
+![N|Solid](html_to_image/Farmer%20Yankee-2022.08.07-19.45.11.png)
