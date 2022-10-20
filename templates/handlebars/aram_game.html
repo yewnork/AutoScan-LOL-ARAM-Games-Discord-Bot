@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+        body {
+            font-family: "Poppins", Arial, Helvetica, sans-serif;
+            background: rgb(22, 22, 22);
+            color: #fff;
+            max-width: 700px;
+            font-size: 22px;
+        }
+
+        #wrapper {
+            background-color: #fff;
+            padding: 3px;
+        }
+
+        .flex-container {
+            height: 100%;
+            display: flex;
+        }
+
+        .top-container {
+            background-color: rgb(22, 22, 22);
+            /* padding: 2px; */
+            text-align: center;
+            font-size: 25px;
+            display: flex;
+            /* padding: 0px 6px; */
+        }
+
+        .top-container .left-container,
+        .top-container .right-container {
+            display: flex;
+            background-color: rgb(22, 22, 22);
+            padding: 3px 6px;
+        }
+
+        #bot-container {
+            background-color: rgb(22, 22, 22);
+            padding: 3px 6px;
+            font-size: 22px;
+            display: flex;
+            /* text-align: right; */
+        }
+
+        .left {
+            flex: 1 1 0;
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+            flex: 1 1 0;
+        }
+
+        .left-container {
+            background-color: rgb(179, 74, 74);
+            flex: 1 1 0;
+            width: 50%;
+            /* padding: 2px; */
+        }
+
+        .right-container {
+            background-color: rgb(61, 95, 207);
+            flex: 1 1 0;
+            width: 50%;
+            /* padding: 2px; */
+        }
+
+        .tg {
+            width: 100%;
+        }
+
+        .tbl-mmr-cell {
+            text-align: center;
+        }
+
+        .td-champion {
+            width: 45px;
+            height: 45px;
+            text-align: center;
+        }
+
+        .td-champion img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .tg-0lax {
+            padding-left: 5px;
+        }
+
+        td {
+            padding: 0px;
+            line-height: 0px;
+        }
+
+        tr {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="top-container">
+            <div class="left-container">
+                <span class="left">Red Team</span>
+                <span class="right">{{red_team.avg_mmr}}</span>
+            </div>
+            <div class="right-container">
+                <span class="left">Blue Team</span>
+                <span class="right">{{blue_team.avg_mmr}}</span>
+
+            </div>
+        </div>
+        <div class="flex-container">
+
+            <div class="left-container">
+                <div class="tg-wrap">
+                    <table class="tg">
+                        <tbody>
+                            {{#red_team.participants}}
+                            <tr>
+                                <td class="td-champion"><img src="{{champion_id}}" /></td>
+                                <td class="tg-0lax">{{summoner_name}}</td>
+                                <td class="tbl-mmr-cell">{{mmr}}</td>
+                            </tr>
+                            {{/red_team.participants}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="tg-wrap">
+                    <table class="tg">
+                        <tbody>
+                            {{#blue_team.participants}}
+                            <tr>
+                                <td class="td-champion"><img src="{{champion_id}}" /></td>
+                                <td class="tg-0lax">{{summoner_name}}</td>
+                                <td class="tbl-mmr-cell">{{mmr}}</td>
+                            </tr>
+                            {{/blue_team.participants}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="bot-container">
+            <span class="left">{{summoner_name_main}}</span>
+            <span class="right">{{time_stamp}}</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
